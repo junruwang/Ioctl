@@ -10,7 +10,6 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private IoctlExec ioctlExec;
-    private ExecShellCmd execShellCmd;
     private static final String TAG="iocjni";
     private TextView tvShowResult;
     private Button btChmodPort,btOpenSel,btCloseSel,btsetLightOn,btsetLightOff;
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void run() {
                         while (!isOver){
-                            execShellCmd.exec("chmod 777 /dev/ghgpiosel");
+                            ExecShellCmd.exec("chmod 777 /dev/ghgpiosel");
                             isOver=true;
                         }
                     }
