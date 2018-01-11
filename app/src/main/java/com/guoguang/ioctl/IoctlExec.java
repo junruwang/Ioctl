@@ -27,8 +27,8 @@ public class IoctlExec {
     private native int closeSel();
 
     /**
-     * 选择UART进行置位操作
-     * @param gpio 选择控制的位置
+     * 置位操作
+     * @param gpio 选择控制的gpio
      * @param state 设置的状态，0为低电平，1为高电平
      * @return 返回置位是否成功，成功为0，不成功为-1
      */
@@ -57,17 +57,25 @@ public class IoctlExec {
 
     /**
      * 置位使灯亮起
-     * @return
+     * @return 成功为0，不成功为-1，gpio输入错误为-2
      */
-    public int setLightOn(){
-        return iocSetData(2,1);
+    public int setLightOn(int gpio){
+        if(gpio==0||gpio==1||gpio==2||gpio==3||gpio==4){
+            return iocSetData(gpio,0);
+        }else {
+            return -2;
+        }
     }
 
     /**
      * 置位使灯熄灭
-     * @return
+     * @return 成功为0，不成功为-1，gpio输入错误为-2
      */
-    public int setLightOff(){
-        return iocSetData(2,0);
+    public int setLightOff(int gpio){
+        if(gpio==0||gpio==1||gpio==2||gpio==3||gpio==4){
+            return iocSetData(gpio,1);
+        }else {
+            return -2;
+        }
     }
 }
