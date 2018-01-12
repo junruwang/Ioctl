@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btsetLightOff.setOnClickListener(this);
         btChmodPort.setOnClickListener(this);
 
-
-        String[] str={"电源灯1-gpio0","电源灯2-gpio1","蓝牙-gpio2","USB电源-gpio3","升压使能-gpio4"};
+        //usb电源、升压使能为高电平触发，其他低电平触发
+        String[] str={"电源灯1-低电平-gpio0","电源灯2-低电平-gpio1","蓝牙-低电平-gpio2","USB电源-高电平-gpio3","升压使能-高电平-gpio4"};
         ArrayAdapter adapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,str);
         gpioList.setAdapter(adapter);
     }
