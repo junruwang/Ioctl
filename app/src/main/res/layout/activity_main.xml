@@ -41,12 +41,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/setLightOn"
-            android:text="灯亮"/>
+            android:text="置0-低电平"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/setLightOff"
-            android:text="灯灭"/>
+            android:text="置1-高电平"/>
     </LinearLayout>
 
     <TextView
